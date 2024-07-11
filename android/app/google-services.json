@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "782580129757",
+    "firebase_url": "https://musicify-app-d33e7.firebaseio.com",
+    "project_id": "musicify-app-d33e7",
+    "storage_bucket": "musicify-app-d33e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782580129757:android:25a98c84dbfc6e1feee034",
+        "android_client_info": {
+          "package_name": "com.musicify.production"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782580129757-ucjm46f84mkdaaq58umt8mi7811360qk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqgASSrOjTZjzTZRU0R366DNGYlXafDVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782580129757-ucjm46f84mkdaaq58umt8mi7811360qk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "782580129757-uh3u51j6vh8aof3fvlpsb4qikdghqunt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.test.test.test.test"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

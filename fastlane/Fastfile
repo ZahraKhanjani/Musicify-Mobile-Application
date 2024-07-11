@@ -1,0 +1,160 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "2.68.0"
+
+
+platform :ios do
+   # iOS Lanes
+
+   lane :build_development do
+     cert_fetch
+     sh("yarn install")
+     cocoapods(
+        podfile: "ios/Podfile"
+     )
+
+     # Disabling automatic code signing because we have certificates already
+#    update_code_signing_settings(
+#       use_automatic_signing: false,
+#       path: 'ios/newmusicify.xcodeproj'
+#    )
+
+     version = get_version_number(
+       xcodeproj: 'ios/newmusicify.xcodeproj',
+       target: 'newmusicify'
+     )
+
+     build = ENV['CI_JOB_ID'] ? ENV['CI_JOB_ID'] : 0
+     increment_build_number(
+        build_number: build,
+        xcodeproj: 'ios/newmusicify.xcodeproj'
+     )
+
+     # build your iOS app
+     build_app(
+        scheme: "Release",
+        export_method: "ad-hoc",
+        workspace: 'ios/newmusicify.xcworkspace',
+        output_name: "development.ipa",
+        output_directory: "./build"
+     )
+
+   end
+
+   lane :build_master do
+     cert_fetch
+     sh("yarn install")
+     cocoapods(
+        podfile: "ios/Podfile"
+     )
+
+     # Disabling automatic code signing because we have certificates already
+     update_code_signing_settings(
+       use_automatic_signing: false,
+       path: 'ios/newmusicify.xcodeproj'
+     )
+
+     version = get_version_number(
+       xcodeproj: 'ios/newmusicify.xcodeproj',
+       target: 'newmusicify',
+     )
+
+     build = ENV['CI_JOB_ID'] ? ENV['CI_JOB_ID'] : 0
+
+     increment_build_number(
+         build_number: build,
+         xcodeproj: 'ios/newmusicify.xcodeproj'
+      )
+
+     # build your iOS app
+     build_app(
+        scheme: "Release",
+        configuration: "Release",
+        export_method: "ad-hoc",
+        workspace: 'ios/newmusicify.xcworkspace',
+        output_name: "master.ipa",
+        output_directory: "./build"
+     )
+   end
+
+   desc "Fetches the certificates and provisioning profiles to run the project on real devices"
+   lane :cert_fetch do
+     match(type: "development", readonly: true)
+     match(type: "adhoc", readonly: true)
+   end
+
+   desc "Updates the all provisioning profiles"
+   lane :cert_update_all do
+     match(type: "development", readonly: false, force_for_new_devices: true)
+     match(type: "adhoc", readonly: false, force_for_new_devices: true)
+   end
+
+   desc "Updates the provisioning profiles of development"
+   lane :cert_update_devel do
+     match(type: "development", readonly: false, force_for_new_devices: true)
+   end
+
+   desc "Updates the provisioning profiles of beta distribution"
+   lane :cert_update_adhoc do
+     match(type: "adhoc", readonly: true, force_for_new_devices: true)
+   end
+
+
+   lane :bump_development do
+     increment_version_number(bump_type: "patch")
+
+     version = get_version_number(
+       xcodeproj: 'ios/newmusicify.xcodeproj',
+       target: 'newmusicify'
+     )
+     build = get_build_number(
+       xcodeproj: "ios/newmusicify.xcodeproj",
+     )
+
+     commit_version_bump(
+       message: "Version bump for development",
+       xcodeproj: 'ios/newmusicify.xcodeproj'
+     )
+
+     add_git_tag(
+       tag: "builds/development/v#{version}.#{build}"
+     )
+     push_to_git_remote(
+       remote_branch: "development",
+     )
+   end
+
+   lane :bump_master do
+     https://developer.apple.com/library/content/qa/qa1827/_index.html(bump_type: "minor")
+
+     version = get_version_number(
+       xcodeproj: 'ios/newmusicify.xcodeproj',
+       target: 'newmusicify'
+     )
+     build = get_build_number(
+       xcodeproj: "ios/newmusicify.xcodeproj",
+     )
+
+     commit_version_bump(
+       message: "Version bump for master",
+       xcodeproj: 'ios/newmusicify.xcodeproj')
+
+     add_git_tag(
+       tag: "builds/master/v#{version}.#{build}"
+     )
+     push_to_git_remote(
+       remote_branch: "master",
+     )
+   end
+end
+
+platform :android do
+  # Android Lanes
+  desc 'Build the Android application.'
+  lane :build_development do
+    sh("yarn install")
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+  end
+end

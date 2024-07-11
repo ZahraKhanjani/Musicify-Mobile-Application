@@ -1,0 +1,50 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-08-15 13:49:40",
+    "containerVersion": {
+        "path": "accounts/6001841949/containers/32204648/versions/0",
+        "accountId": "6001841949",
+        "containerId": "32204648",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6001841949/containers/32204648",
+            "accountId": "6001841949",
+            "containerId": "32204648",
+            "name": "Musicify Production",
+            "publicId": "GTM-KDL6JSZ",
+            "usageContext": [
+                "IOS_SDK_5"
+            ],
+            "fingerprint": "1597496252230",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6001841949/containers/32204648/workspaces?apiLink=container"
+        },
+        "builtInVariable": [
+            {
+                "accountId": "6001841949",
+                "containerId": "32204648",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "6001841949",
+                "containerId": "32204648",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "6001841949",
+                "containerId": "32204648",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "6001841949",
+                "containerId": "32204648",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1597499380209",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6001841949/containers/32204648/versions/0?apiLink=version"
+    }
+}

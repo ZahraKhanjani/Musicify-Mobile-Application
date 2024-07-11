@@ -1,0 +1,91 @@
+image: node:lts
+
+cache:
+  paths:
+    - node_modules
+    - vendor/bundle
+
+before_script:
+  - git config --global user.email "${CI_EMAIL}"
+  - git config --global user.name "${CI_USERNAME}"
+stages:
+  - test
+  - build
+  - deploy
+
+test:eslint:
+  when: manual
+  stage: test
+  only:
+    - branches
+  tags:
+    - sibche
+    - docker
+  script:
+    - yarn install
+    - yarn lint
+
+test:flow:
+  when: manual
+  stage: test
+  only:
+    - branches
+  tags:
+    - sibche
+    - docker
+  script:
+    - yarn install
+    - yarn lint:flow
+
+
+build:android:development:
+  when: manual
+  tags:
+    - sibche
+    - docker
+  image: registry.seebche.com/internal/library/fastlane-react-native-android-docker
+  stage: build
+  variables:
+    http_proxy: http://86.104.32.53:7172
+    https_proxy: http://86.104.32.53:7172
+    no_proxy: gitlab.seebche.com,github.com,sentry.sibche.com
+  script:
+    - gem install bundler --version '1.17.3'
+    - bundle config set path 'vendor/bundle'
+    - bundle install
+    - bundle exec fastlane android build_development
+  artifacts:
+    paths:
+      - ./build/development.ipa
+    expire_in: 7 days
+  retry: 2
+
+build:ios:development:
+  tags:
+    - mac
+  stage: build
+  variables:
+    http_proxy: http://86.104.32.53:7172
+    https_proxy: http://86.104.32.53:7172
+    no_proxy: gitlab.seebche.com,github.com,sentry.sibche.com
+  script:
+    - gem install bundler --version '1.17.3'
+    - bundle config set path 'vendor/bundle'
+    - bundle install
+    - bundle exec fastlane ios build_development
+  artifacts:
+    paths:
+      - ./build/development.ipa
+    expire_in: 7 days
+  retry: 2
+
+deploy:develpment:
+  when: manual
+  only:
+    - tags
+  tags:
+    - mac
+  stage: deploy
+  dependencies:
+    - build:ios:development
+  script: "curl -i -X POST 'https://api.sibche.com/sdk/versions' -H 'Content-Type: multipart/form-data' -H 'Accept: application/json, text/plain, */*' -H \"App-Key: ${SIBCHE_DEVELOPMENT_TOKEN}\" -F \"change_log=${CI_COMMIT_TAG} ${CI_JOB_URL}\" -F 'ipa=@ios/development.ipa'"

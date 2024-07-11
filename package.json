@@ -1,0 +1,98 @@
+{
+  "name": "newmusicify",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:flow": "flow check --flowconfig-name \".flowconfig\"",
+    "flow:coverage": "flow coverage"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.7.1",
+    "@react-native-community/blur": "^3.6.0",
+    "@react-native-community/masked-view": "^0.1.6",
+    "@react-native-community/netinfo": "^5.9.2",
+    "@react-native-community/toolbar-android": "^0.1.0-rc.2",
+    "@react-native-firebase/analytics": "^7.4.1",
+    "@react-native-firebase/app": "^8.3.0",
+    "@react-native-firebase/messaging": "^7.6.1",
+    "@react-navigation/bottom-tabs": "^5.0.0",
+    "@react-navigation/native": "^5.0.0",
+    "@react-navigation/stack": "^5.0.0",
+    "@sentry/react-native": "^1.7.1",
+    "axios": "^0.19.2",
+    "git": "^0.1.5",
+    "lodash": "^4.17.15",
+    "lottie-ios": "3.1.8",
+    "lottie-react-native": "^3.5.0",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-config": "^1.3.2",
+    "react-native-device-info": "^5.5.3",
+    "react-native-draggable-flatlist": "^2.3.1",
+    "react-native-fast-image": "^7.0.2",
+    "react-native-gesture-handler": "^1.5.6",
+    "react-native-indicators": "^0.17.0",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-marquee": "^0.3.2",
+    "react-native-reanimated": "^1.7.0",
+    "react-native-safe-area-context": "^0.7.2",
+    "react-native-safe-area-view": "^1.0.0",
+    "react-native-screens": "^2.0.0-beta.2",
+    "react-native-svg": "^12.0.3",
+    "react-native-swift": "^1.2.2",
+    "react-native-track-player": "https://github.com/ZahraKhanjani/react-native-track-player.git#v2",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.0.2",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "rn-fetch-blob": "^0.12.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.10.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^0.0.7",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^6.8.0",
+    "flow-bin": "^0.135.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "isSwift": true,
+  "moduleRoots": [
+    "./src/"
+  ],
+  "babel": {
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ],
+          "extensions": [
+            ".js",
+            ".ios.js"
+          ],
+          "alias": {
+            "root": "./"
+          }
+        }
+      ],
+      "@babel/plugin-proposal-optional-chaining"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+# The Appfile can be used to specify information that's used across all fastlane
+# tools, like your username or the app's bundle identifier.
+#
+# For more details, check out the documentation at:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
+
+# app_identifier "com.your.app" # the bundle identifier of your app
+# apple_id "apple@fastlane.tools" # Your Apple ID
+
+apple_id "sib.fastlane@gmail.com"
+
+
+
+json_key_file("google-key.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.musicify.production") # e.g. com.krausefx.app
+
