@@ -52,6 +52,15 @@ Run the project using Xcode:
     <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/5c0e3abf-55c4-440c-b693-2e2ba48c3c6b"
          alt="screen-shot-3" width="300">
 </figure>
+<figure>
+    <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/951ec337-3225-4d9f-b1f2-67273c17b31b"
+         alt="screen-shot-3" width="300">
+</figure>
+
+<figure>
+    <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/bd6c5112-97c2-4cd0-93d7-b757489fefdd"
+         alt="screen-shot-3" width="300">
+</figure>
 
 
 <br/>
