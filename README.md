@@ -36,6 +36,10 @@ Run the project using Xcode:
 - if so, run the command `yarn android`
 
 **Here are some screenshots of the application**
+<figure>
+    <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/85707257-0135-4fc7-b40d-8de48dd9e2ea"
+         alt="screen-shot-1" width="500">
+</figure>
 ![image](https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/85707257-0135-4fc7-b40d-8de48dd9e2ea)
 ![image](https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/0be312b4-12fb-4f54-9af9-0911a2e53567)
 ![image](https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/1fe169eb-2c57-41eb-93ef-a65b091e093f)
