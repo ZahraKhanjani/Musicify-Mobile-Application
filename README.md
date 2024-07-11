@@ -38,20 +38,26 @@ Run the project using Xcode:
 **Here are some screenshots of the application**
 <figure>
     <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/85707257-0135-4fc7-b40d-8de48dd9e2ea"
-         alt="screen-shot-1" width="500">
+         alt="screen-shot-1" width="300">
 </figure>
 <figure>
     <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/0be312b4-12fb-4f54-9af9-0911a2e53567"
-         alt="screen-shot-2" width="500">
+         alt="screen-shot-2" width="300">
 </figure>
 <figure>
     <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/1fe169eb-2c57-41eb-93ef-a65b091e093f"
-         alt="screen-shot-3" width="500">
+         alt="screen-shot-3" width="300">
 </figure>
 <figure>
     <img src="https://github.com/ZahraKhanjani/Musicify-Mobile-Application/assets/30265908/5c0e3abf-55c4-440c-b693-2e2ba48c3c6b"
-         alt="screen-shot-3" width="500">
+         alt="screen-shot-3" width="300">
 </figure>
+
+
+<br/>
+<br/>
+<br/>
+
 
 
 **NOTE**
