@@ -70,7 +70,10 @@ Run the project using Xcode:
 
 
 **NOTE**
+
 This project was last modified about 3 years ago, and needs to be refactored and updated.
+
 **IMPORTANT NOTE**
+
 This is **JUST A MUSIC PLAYER**; you must provide the media files through APIs. This player is not in violation of any copyright rules
 
